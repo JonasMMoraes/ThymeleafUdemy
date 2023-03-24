@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="pt" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
     <title>Spring-Boot Básico</title>
     <meta charset="UTF-8"/>
@@ -20,11 +22,14 @@
 <header th:replace="fragments/header :: cabecalho">
     <div>header</div>
 </header>
-<div>
-    <aside>
-        <span>menu</span>
+<div class="layout-main">
+    <aside >
+        <nav th:replace="fragments/sidebar :: nav-sidebar">
+            <span>menu</span>
+        </nav>
+
     </aside>
-    <section>
+    <section layout:fragment="corpo">
         <div>conteudo principal das paginas</div>
     </section>
     <footer th:replace="fragments/footer :: rodape">
